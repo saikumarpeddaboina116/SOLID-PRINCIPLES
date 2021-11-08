@@ -1,4 +1,4 @@
-public class Temperature_Management_In_Driver_Coach extends TemperatureManagement {
+public class Temperature_ManagementInDriverCoach extends TemperatureManagement {
     //LISKOV SUBSTITUTION PRINCIPLE
     private double constantTemperature;
     private double finalTemperature;
