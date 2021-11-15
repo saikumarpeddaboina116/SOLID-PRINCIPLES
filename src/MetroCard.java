@@ -1,4 +1,4 @@
-public class MetroCard implements TicketAccess
+public class MetroCard extends Access,implements TicketAccess
 {
     //OPEN FOR EXTENSION CLOSED FOR MODIFICATION
     int cardId;
@@ -12,7 +12,7 @@ public class MetroCard implements TicketAccess
     public MetroCard() {
     }
 
-
+@Override
     public boolean checkBalance()
     {
         if(availabeBalance >= 60) // 60 is the maximum fare
@@ -22,14 +22,20 @@ public class MetroCard implements TicketAccess
     }
 
     //DEPENDENCY INVERSION
+
+    Access tktAccess=new Ticket();
     @Override
     public boolean entryAccess() {
-        return (checkBalance() && true);
+
+        return (checkBalance() &&  tktAcc.entryAccess());
     }
 
     @Override
     public boolean exitAccess() {
-        return (checkBalance() && true);
+        return (checkBalance() && tktAcc.exitAccess());
     }
+
+}
+
 
 }
