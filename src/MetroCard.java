@@ -1,4 +1,4 @@
-public class MetroCard extends Access,implements TicketAccess
+public class MetroCard  extends Access implements MetroCardAccess
 {
     //OPEN FOR EXTENSION CLOSED FOR MODIFICATION
     int cardId;
@@ -8,10 +8,6 @@ public class MetroCard extends Access,implements TicketAccess
         this.cardId=cardId;
         this.availabeBalance=availabeBalance;
     }
-
-    public MetroCard() {
-    }
-
 @Override
     public boolean checkBalance()
     {
@@ -20,22 +16,15 @@ public class MetroCard extends Access,implements TicketAccess
         else
             return false;
     }
-
     //DEPENDENCY INVERSION
-
     Access tktAccess=new Ticket();
-    @Override
+
     public boolean entryAccess() {
 
         return (checkBalance() &&  tktAcc.entryAccess());
     }
-
-    @Override
     public boolean exitAccess() {
         return (checkBalance() && tktAcc.exitAccess());
     }
-
-}
-
 
 }
