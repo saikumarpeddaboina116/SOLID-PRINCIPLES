@@ -1,5 +1,6 @@
-public class Ticket extends Access implements TicketAccess {
+public class Ticket extends Access  {
     //DEPENDENCY INVERSION
+    //SUB CLASS
     private int boardingStationId;
     private int destinationStationId;
     private int currentStationId;
@@ -13,12 +14,12 @@ public class Ticket extends Access implements TicketAccess {
         this.destinationStationId=destinationStation;
         this.currentStationId=currentStationId;
     }
-    @Override
+
     public boolean entryAccess() {
        // String currentStationId=getCurrentStationId();
         return (boardingStationId == currentStationId);
     }
-    @Override
+
     public boolean exitAccess() {
         return ( destinationStationId == currentStationId);
     }
