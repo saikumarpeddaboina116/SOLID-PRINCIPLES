@@ -5,14 +5,16 @@ public class MetroManagement {
     rd.getRouteLine();
     TemperatureManagement driverCoach = new TemperatureManagementInDriverCoach();
   driverCoach.manageTemperature();
+        TemperatureManagement passengerCoach = new TemperatureManagementInPassengerCoach(25,35);
+        passengerCoach.manageTemperature();
 
-        TicketAccess obj;
+
         Access acc;
-  obj=new Ticket(10,15,10);
-  acc=new Access(obj);
+  acc=new Ticket(10,15,10);
+
   System.out.println(acc.hasAccess());
-  obj= (TicketAccess) new MetroCard(100,200);
-  acc=new Access(obj);
+        acc= new MetroCard(100,200);
+
         System.out.println(acc.hasAccess());
 
 
