@@ -13,13 +13,11 @@ public class Ticket extends Access implements TicketAccess {
         this.destinationStationId=destinationStation;
         this.currentStationId=currentStationId;
     }
-
     @Override
     public boolean entryAccess() {
        // String currentStationId=getCurrentStationId();
         return (boardingStationId == currentStationId);
     }
-
     @Override
     public boolean exitAccess() {
         return ( destinationStationId == currentStationId);
