@@ -1,4 +1,5 @@
-public class Access {
+abstract class Access {
+    //SUPER CLASS
     //DEPENDENCY INVERSION
 TicketAccess tktAcc;
 Access()
