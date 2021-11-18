@@ -16,13 +16,11 @@ public class MetroCard  extends Access
         else
             return false;
     }         //DEPENDENCY INVERSION
-    Access tktAccess=new Ticket();
-
-    public boolean entryAccess() {
-        return (checkBalance() &&  tktAcc.entryAccess());
+      public boolean entryAccess() {
+        return (checkBalance() &&  true);
     }
     public boolean exitAccess() {
-        return (checkBalance() && tktAcc.exitAccess());
+        return (checkBalance() && true);
     }
 
 }
